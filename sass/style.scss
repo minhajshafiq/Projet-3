@@ -180,3 +180,144 @@ body, html {
   }
 
 }
+
+:root {
+  --pink-light: #ff7eb4;
+  --pink: #ff2581;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.icon {
+  fill: transparent;
+  stroke: black;
+  stroke-width: 20;
+  cursor: pointer;
+  position: relative;
+
+  svg {
+    overflow: visible;
+    width: 2.5rem;
+  }
+
+  path {
+    stroke-dashoffset: 0;
+    stroke-dasharray: 1550;
+    transform-origin: center;
+  }
+
+  .heart-background {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    stroke: none;
+  }
+
+  .heart-main:hover path {
+    animation: stroke-animation 2s ease-in-out forwards;
+  }
+
+  .heart-main:hover ~ .heart-background path {
+    animation: fade-animation 2s ease-in-out forwards;
+  }
+}
+
+@keyframes stroke-animation {
+  0% {
+    stroke-dashoffset: 0;
+  }
+  30% {
+    stroke-dashoffset: 1550;
+  }
+  60% {
+    stroke-dashoffset: 3100;
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: var(--pink);
+    transform: scale(1.1);
+  }
+  90% {
+    transform: scale(1);
+  }
+  100% {
+    stroke-dashoffset: 3100;
+    fill: var(--pink);
+  }
+}
+
+@keyframes fade-animation {
+  70% {
+    fill: transparent;
+    transform: scale(1);
+  }
+  80% {
+    fill: var(--pink-light);
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.5);
+    opacity: 0;
+  }
+}
+
+.footer {
+  background-color: #353535;
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    text-align: center;
+  }
+  
+  &__logo {
+    color: white;
+    font-family: "Shrikhand", "cursive";
+    margin: 0;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__listAlt {
+    margin: 0.5rem 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__link {
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__icon {
+    width: 1.2rem;
+    margin-right: 0.5rem;
+  }
+}
