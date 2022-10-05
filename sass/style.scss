@@ -60,6 +60,10 @@ body, html {
     &__btn {
       @include button(primary);
     }
+
+    &__btn:hover {
+      background: lighten(#f7f7f700, 3%);
+    }
   }
 
   .process__contain {
@@ -73,8 +77,7 @@ body, html {
     display: flex;
     flex-direction: column;
     &__title {
-        margin: 1rem;
-        text-align: center;
+        margin: 0.25rem;
     }
     &__step {
         display: flex;
@@ -104,6 +107,7 @@ body, html {
     &__steps {
         display: flex;
         justify-content: center;
+        flex-direction: column;
     }
 }
 
@@ -113,16 +117,15 @@ body, html {
 
   &_title {
     margin: 1rem;
-    text-align:center;
   }
 
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   column-gap: 2rem;
-  row-gap: 2rem;
+  row-gap: 1rem;
 }
 
 .card {
@@ -131,10 +134,6 @@ body, html {
   position: relative;
   color: inherit;
   display: block;
-  margin: 1rem;
-  margin-left: auto;
-  margin-right: auto;
-  min-width: 70%;
   &:hover {
     transition: .5s;
     transform: scale(1.02);
@@ -181,104 +180,77 @@ body, html {
 
 }
 
-:root {
-  --pink-light: #ff7eb4;
-  --pink: #ff2581;
+.heart {
+  font-size: 2rem;
+  cursor:pointer;
+  
+  &:hover{ 
+    .empty {
+      display: none;
+    }
+    .full {
+      display:block;
+      animation: opacity-animation 2s ease-in-out forwards;
+    }
+  }
+
+.full {
+    background: -moz-linear-gradient(357deg,#9356dc,#ff79da);
+    background: -webkit-linear-gradient(357deg,#9356dc,#ff79da);
+    background: linear-gradient(357deg,#9356dc,#ff79da);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display:none;
+
+}
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-.icon {
-  fill: transparent;
-  stroke: black;
-  stroke-width: 20;
-  cursor: pointer;
-  position: relative;
-
-  svg {
-    overflow: visible;
-    width: 2.5rem;
-  }
-
-  path {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 1550;
-    transform-origin: center;
-  }
-
-  .heart-background {
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    stroke: none;
-  }
-
-  .heart-main:hover path {
-    animation: stroke-animation 2s ease-in-out forwards;
-  }
-
-  .heart-main:hover ~ .heart-background path {
-    animation: fade-animation 2s ease-in-out forwards;
-  }
-}
-
-@keyframes stroke-animation {
+@keyframes opacity-animation {
   0% {
-    stroke-dashoffset: 0;
-  }
-  30% {
-    stroke-dashoffset: 1550;
-  }
-  60% {
-    stroke-dashoffset: 3100;
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: var(--pink);
-    transform: scale(1.1);
-  }
-  90% {
-    transform: scale(1);
-  }
-  100% {
-    stroke-dashoffset: 3100;
-    fill: var(--pink);
-  }
-}
-
-@keyframes fade-animation {
-  70% {
-    fill: transparent;
-    transform: scale(1);
-  }
-  80% {
-    fill: var(--pink-light);
-    transform: scale(1.1);
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: scale(2.5);
     opacity: 0;
   }
+  30% {
+    opacity: 30;
+  }
+  60% {
+    opacity: 60;
+  }
+  80% {
+    opacity: 80;
+  }
+  100% {
+    opacity: 100;
+  }
 }
+
+.heart_icon {
+  font-family: FontAwesome;
+  position: relative;
+  &::before {
+    content:"\f21e";
+    padding: 5px;
+  }
+  &:hover::before {
+    animation: opacity-animation 2s ease-in-out forwards;
+    background: linear-gradient(357deg,#9356dc,#ff79da);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
 
 .footer {
   background-color: #353535;
   
-  .container {
+  &__container {
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    text-align: center;
+    padding-left: 2rem;
   }
   
   &__logo {
