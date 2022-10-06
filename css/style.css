@@ -20,36 +20,53 @@ a {
   text-align: center;
   color: black;
 }
+.header--withBackArrow {
+  position: relative;
+}
+.header__arrow {
+  position: absolute;
+  left: 2rem;
+  height: 2rem;
+  width: 2rem;
+  top: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: translateY(-40%);
+  font-size: 1.5rem;
+  color: black;
+}
 
-.local {
+.heroImg {
+  max-width: 100%;
+  max-height: 32rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.menu {
+  margin-top: -4rem;
+  border-radius: 2rem 2rem 0 0;
+  background-color: #f6f6f6;
+  z-index: 1;
+  position: relative;
+}
+.menu__header {
+  padding: 1rem 2rem 0 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu__title {
+  font-family: "Shrikhand", "cursive";
+}
+.menu__contain-button {
   display: flex;
   justify-content: center;
-  padding: 1.25rem 1rem;
-  background-color: rgb(243, 243, 243);
-  font-size: 1.2rem;
-  position: relative;
-  color: grey;
+  align-items: center;
+  width: 100%;
 }
-.local__icon {
-  margin-right: 1rem;
-}
-.local__text {
-  font-weight: 700;
-}
-
-.hero {
-  padding: 2rem;
-  text-align: center;
-  background-color: rgb(250, 250, 250);
-}
-.hero__title {
-  margin: 0;
-}
-.hero__subtitle {
-  font-weight: 300;
-  margin: 1.5rem 0;
-}
-.hero__btn {
+.menu__button {
   border: 0;
   padding: 0.75rem 1.5rem;
   font-weight: 500;
@@ -60,114 +77,14 @@ a {
   cursor: pointer;
   transition-duration: 0.25s;
   box-shadow: 0.25rem 0.25rem 10px rgba(0, 0, 0, 0.25);
+  margin: 60px;
+  margin-top: 30px;
 }
-.hero__btn:hover {
-  background: rgba(255, 255, 255, 0);
-}
-
-.process__contain {
-  padding: 25px;
-  background: white;
-}
-
-.process {
-  background-color: white;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-}
-.process__title {
-  margin: 0.25rem;
-}
-.process__step {
-  display: flex;
-  align-items: center;
-  background: #f6f6f6;
-  padding: 1rem;
-  margin: 0.75rem;
-  box-shadow: 0.25rem 0.25rem 0.5rem rgba(0, 0, 0, 0.125);
-  border-radius: 1.25rem;
-}
-.process__step:hover {
-  background: #f2eafb;
+.menu__button:hover {
+  opacity: 0.8;
   cursor: pointer;
-}
-.process__number {
-  background-color: #9356DC;
-  color: white;
-  position: absolute;
-  padding: 3px 8px 3px 8px;
-  border-radius: 500px;
-  transform: translateX(-50%);
-}
-.process__icon {
-  color: #7E7E7E;
-  margin: 0 20px;
-}
-.process__steps {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.restaurants {
-  background-color: #f6f6f6;
-  padding: 2rem 1rem;
-}
-.restaurants_title {
-  margin: 1rem;
-}
-
-.cards {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  column-gap: 2rem;
-  row-gap: 1rem;
-}
-
-.card {
-  background-color: white;
-  border-radius: 1rem;
-  position: relative;
-  color: inherit;
-  display: block;
-}
-.card:hover {
-  transition: 0.5s;
-  transform: scale(1.02);
-  box-shadow: 0px 0px 10px 2px #9356DC;
-}
-.card__img {
-  height: 12rem;
-  width: 100%;
-  border: transparent solid 0px;
-  border-radius: 1rem 1rem 0 0;
-  box-shadow: none;
-  object-fit: cover;
-}
-.card__badge {
-  background-color: #99E2D0;
-  color: #1b6150;
-  padding: 0.5rem;
-  border-radius: 0.125rem;
-  position: absolute;
-  top: 1rem;
-  right: 0.75rem;
-}
-.card__footer {
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-}
-.card__content {
-  flex: 1;
-}
-.card__title {
-  margin: 0;
-  margin-bottom: 0.25rem;
-}
-.card__subtitle {
-  margin: 0;
+  transition: 0.3s;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.6);
 }
 
 .heart {
@@ -209,21 +126,145 @@ a {
     opacity: 100;
   }
 }
-.heart_icon {
-  font-family: FontAwesome;
+.submenus {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 1rem;
+}
+
+.submenu {
+  max-width: 100%;
+  overflow: hidden;
+  padding: 0 1rem;
+}
+.submenu__title {
+  text-transform: uppercase;
   position: relative;
+  padding-bottom: 0.5rem;
+  font-weight: normal;
 }
-.heart_icon::before {
-  content: "\f21e";
-  padding: 5px;
+.submenu__title::after {
+  content: "";
+  width: 3rem;
+  height: 0.25rem;
+  background-color: #99E2D0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
-.heart_icon:hover::before {
-  animation: opacity-animation 2s ease-in-out forwards;
-  background: linear-gradient(357deg, #9356dc, #ff79da);
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+
+.submenuItem {
+  background-color: white;
+  padding: 1rem;
+  display: flex;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  cursor: pointer;
+}
+.submenuItem__container {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  flex: 1;
+}
+.submenuItem__title {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.submenuItem__description {
+  margin: 0;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.submenuItem__price {
+  font-weight: bold;
+  display: flex;
+  align-items: flex-end;
+  padding-left: 0.5rem;
+}
+.submenuItem__confirmation {
+  background-color: #99E2D0;
+  margin: -1rem -5rem -1rem 1rem;
+  width: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition-duration: 0.5s;
+}
+.submenuItem:hover .submenuItem__confirmation {
+  margin-right: -1rem;
+}
+.submenuItem__Slideicon {
+  height: 1.6rem;
+  width: 1.6rem;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 100px;
+  transform: rotate(180deg);
+  transition-duration: 0.5s;
+}
+.submenuItem:hover .submenuItem__Slideicon {
+  transform: rotate(0);
+}
+.submenuItem__icon {
+  color: #99E2D0;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.appears {
+  animation: slideDown 1s both;
+}
+
+#case-1 {
+  animation-delay: 0.1s;
+}
+
+#case-2 {
+  animation-delay: 0.2s;
+}
+
+#case-3 {
+  animation-delay: 0.3s;
+}
+
+#case-4 {
+  animation-delay: 0.4s;
+}
+
+#case-5 {
+  animation-delay: 0.5s;
+}
+
+#case-6 {
+  animation-delay: 0.6s;
+}
+
+#case-7 {
+  animation-delay: 0.7s;
+}
+
+#case-8 {
+  animation-delay: 0.8s;
+}
+
+#case-9 {
+  animation-delay: 0.9s;
 }
 
 .footer {
