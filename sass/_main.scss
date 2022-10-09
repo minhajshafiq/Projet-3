@@ -1,2 +1,9 @@
+@import "./utils/variables";
+@import "./utils/mixins";
+
+@import "./layouts/footer";
+@import "./layouts/header";
 @import "homepage";
-@import "menupages";
+@import "animations";
+@import "menupage";
+@import "base";

@@ -1,6 +1,3 @@
-@import "./utils/variables";
-@import "./utils/mixins";
-
 body, html {
   margin: 0;
   font-family: 'Roboto', sans-serif;
@@ -45,7 +42,7 @@ a {
 
 .heroImg {
   max-width: 100%;
-  max-height: 32rem;
+  max-height: 20rem;
   width: 100%;
   object-fit: cover;
 }
@@ -287,6 +284,9 @@ animation-delay: 0.8s;
 animation-delay: 0.9s;
 }
 
+#case-10 {
+  animation-delay: 1s;
+  }
 
 .footer {
   background-color: #353535;
