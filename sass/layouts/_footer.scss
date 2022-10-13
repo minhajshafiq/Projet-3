@@ -48,3 +48,19 @@
     margin-right: 0.5rem;
   }
 }
+
+@media screen and (min-width: 992px) {
+  .footer {
+  
+    &__container {
+      display: flex;
+      align-items: center;
+      padding: 1rem;
+      padding-left: 2rem;
+    }
+  
+    &__list {
+      text-align: center;
+    }
+  }
+}

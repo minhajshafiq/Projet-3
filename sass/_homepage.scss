@@ -228,59 +228,7 @@
     }
   }
 
-  .footer {
-    background-color: #353535;
-
-    &__container {
-      display: flex;
-      flex-direction: column;
-      padding: 1rem;
-      padding-left: 2rem;
-    }
-
-    &__logo {
-      color: white;
-      font-family: "Shrikhand", "cursive";
-      margin: 0;
-      font-size: 1.2rem;
-      margin-bottom: 1rem;
-    }
-
-    &__list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    &__listAlt {
-      margin: 0.5rem 0;
-
-      &:first-child {
-        margin-top: 0;
-      }
-
-      &:last-child {
-        margin-bottom: 0;
-      }
-    }
-
-    &__link {
-      color: white;
-      text-decoration: none;
-
-      &:hover {
-        text-decoration: underline;
-      }
-    }
-
-    &__icon {
-      width: 1.2rem;
-      margin-right: 0.5rem;
-    }
-  }
-
-
-  @media screen and (min-width: 769px) {
+  @media screen and (min-width: 768px) {
 
     .process {
       &__steps {
@@ -290,4 +238,29 @@
       }
     }
 
+  }
+
+  
+  @media screen and (min-width: 992px) {
+
+    .process {
+      
+      &__title {
+        text-align: center;
+      }
+    }
+
+    .restaurants {
+
+      &_title {
+        text-align: center;
+      }
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 2rem;
+      row-gap: 1rem;
+    }
   }
