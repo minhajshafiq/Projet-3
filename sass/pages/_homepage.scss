@@ -182,7 +182,7 @@
     .full {
       background: -moz-linear-gradient(357deg, #9356dc, #ff79da);
       background: -webkit-linear-gradient(357deg, #9356dc, #ff79da);
-      background: linear-gradient(357deg, #9356dc, #ff79da);
+      background: $color-gradient;
       -webkit-background-clip: text;
       -moz-background-clip: text;
       background-clip: text;

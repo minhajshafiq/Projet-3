@@ -24,7 +24,7 @@
 }
 
 .loader:before {
-  background: #9356dc;
+  background: #9356DC;
   -webkit-animation: load1 1s ease-in-out;
   animation: load1 1s ease-in-out;
   animation-iteration-count: 3;
@@ -434,16 +434,6 @@ a {
     row-gap: 1rem;
   }
 }
-body, html {
-  margin: 0;
-  font-family: "Roboto", sans-serif;
-  scroll-behavior: smooth;
-}
-
-a {
-  text-decoration: none;
-}
-
 .header--withBackArrow {
   position: relative;
 }
