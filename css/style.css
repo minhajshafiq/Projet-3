@@ -433,6 +433,10 @@ a {
     column-gap: 2rem;
     row-gap: 1rem;
   }
+  .card {
+    margin-left: 15%;
+    margin-right: 15%;
+  }
 }
 .header--withBackArrow {
   position: relative;
