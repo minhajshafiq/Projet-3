@@ -319,9 +319,6 @@ a {
   background-color: #f6f6f6;
   padding: 2rem 1rem;
 }
-.restaurants_title {
-  margin: 1rem;
-}
 
 .cards {
   display: grid;
@@ -427,6 +424,7 @@ a {
   }
   .restaurants_title {
     text-align: center;
+    margin: 1rem;
   }
   .cards {
     display: grid;

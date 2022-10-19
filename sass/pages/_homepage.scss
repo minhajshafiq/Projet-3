@@ -99,10 +99,6 @@
     background-color: #f6f6f6;
     padding: (1rem + 1rem) 1rem;
 
-    &_title {
-      margin: 1rem;
-    }
-
   }
 
   .cards {
@@ -241,6 +237,7 @@
 
       &_title {
         text-align: center;
+        margin: 1rem;
       }
     }
 
