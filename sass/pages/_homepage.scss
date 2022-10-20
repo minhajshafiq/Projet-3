@@ -161,34 +161,6 @@
 
   }
 
-  .heart {
-    font-size: 2rem;
-    cursor: pointer;
-
-    &:hover {
-      .empty {
-        display: none;
-      }
-
-      .full {
-        display: block;
-        animation: opacity-animation 2s ease-in-out forwards;
-      }
-    }
-
-    .full {
-      background: -moz-linear-gradient(357deg, #9356dc, #ff79da);
-      background: -webkit-linear-gradient(357deg, #9356dc, #ff79da);
-      background: $color-gradient;
-      -webkit-background-clip: text;
-      -moz-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: none;
-
-    }
-  }
-
   @keyframes opacity-animation {
     0% {
       opacity: 0;
